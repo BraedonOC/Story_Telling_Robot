@@ -1,0 +1,13 @@
+topic: ~example_topic()
+language: enu
+
+concept:(food) [fruits chicken beef eggs]
+
+u: (can you tell me a story?) Sure thing buddy old pal, our story begins with a decision, a decision you must make. Would you like to go down the red tunnel or the blue tunnel?
+    u1: (the blue tunnel) you go down the blue tunnel and see a bug, would you like to eat it?
+        u2: (yes) you eat the bug, it tastes fine.  You feel full, and you're glad that you didn't eat breakfast this morning.  You continue down the tunnel and it is blue.
+        u2: (no) you choose to not eat the bug, would you like to catch the bug?
+            u3: (yes) you run around for a while and finally catch the bug, the bug has joined your party, would you like to keep going down the tunnel?
+            u3: (no) you continue walking down the tunnel, it is very blue.  As a side note you didn't eat breakfast this morning, and you feel amazing, you really wish that you ate that bug though.
+    u1: (the red tunnel) you go down the red tunnel.  It is on fire.  You die.
+

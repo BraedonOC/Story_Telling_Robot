@@ -1,0 +1,523 @@
+
+
+keep_walking_1:
+    lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You turn away from the path, noticing a massive sewer entrance. It seems to beacon you in like a wide-open mouth awaiting food.  
+    question: Do you want to keep walking  go into the sewers
+    options:
+target: 1
+          keyphrases:
+              - keep walking
+              - continue
+              - brave the bridge
+              - I want to brave the bridge
+              - I'll try the bridge
+          clarification: you want to go right?
+target: 2
+          keyphrases:
+              - go in the sewers
+    - in
+    - sewers
+          clarification: you want to go into the sewers?
+
+
+2: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You cautiously approach the gaping jaws of the sewer entrance, and feel as if something is pulling you in. Going deeper into the sewers the light around you quickly fades. 
+    question: Would you like to take out a flashlight yes or no?
+    options:
+target: 3
+          keyphrases:
+              - yes
+    - flashlight
+    - take out flashlight
+          clarification: you would like to take out your flashlight?
+target: 4
+          keyphrases:
+              - don’t
+    - no
+          clarification: you don’t want to take out your flashlight?
+
+
+#4 no flashlight
+
+4: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: you keep walking in without the use of your flashlight. Bumbling forwards, you outstretch your arms to try to feel where you are going, but it’s useless, you still walk straight into a wall. Instead of continuing any further you decide to turn your flashlight on.
+
+    question: Would you like to take out a flashlight yes or no?
+    options:
+target: 3
+          
+
+
+#3 with flashlight
+3: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You turn on the flashlight, revealing the surrounding tunnel. It’s massive, the tunnel seems to extend into a few branching systems, and looking back you can barely see the light of day from where you came in. You continue along the tunnel, delving deeper into the system all the while stepping carefully as to not slip on the slime coating the interior of the sewer. As you go in further you begin to feel a slight vibration under your feet; however, you are unable to fully make out where it is coming from. Eager to continue towards the source, you rush forwards down the straight hallway until you come to a branch. To your left is a tunnel that is constantly dripping, you can hear the “plops” of water from deep in the cave and reason there must be much more water further in. On the right, it looks as if the cave is getting shorter, the ceiling steadily comes down and you’ll be forced to crawl through. 
+
+    question: Would you like to go left or right?
+
+    options:
+target: 5
+          keyphrases:
+              - left
+    - right
+target: 6
+          keyphrases:
+              - right
+
+
+#5 left
+
+5: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:You head left, hoping to determine the source of the vibrations, but as you continue down the path, you find yourself less and less able to hear or even feel anything. The volume of the “plopping” of water continues to increase, completely drowning out your thoughts as you continue into the tunnel. You think of turning around and heading back where you came from because it is getting to be unbearable, but right as you convince yourself to go back it stops . . . You stop, amazed at how suddenly it got silent as you look forwards and get your bearings. Shining your light, you see a small entrance, eager to get away, you head towards it. 
+
+target: 7
+          keyphrases:
+              - in
+    - dive
+    - go in
+target: 8
+          keyphrases:
+              - go around 
+    - around
+
+
+#6 go right
+
+6: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: crouch
+    Text: You make your way through the right cave, slowly having to duck down further and further. It gets to a point where you are crawling, having to move slowly to avoid any scrapes. Then you feel a rumbling, this one feels more intense than before, leaving everything around you shaking violently. You feel bits of rubble falling on you from the ceiling and realize you have to start moving faster to get out of the situation. You rush forwards, scraping your knee in the process. Despite the pain, you push through until you make it to an opening. Right as you stand back up and turn to look at where you came through the tunnel behind you collapses. You take a second to survey your surroundings and see two possible ways for you to go now that you cannot go back. You see that there is a set of stairs leading up to a source of natural light above you and in front of you, there is an embroidered door. Which way would you like to go?
+
+
+target: 19
+          keyphrases:
+              - stairs
+    - up
+target: 20
+          keyphrases:
+              - door
+    - forward
+
+
+#7 dive in:
+7: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You dive into the pool swimming deep into the clear water. As you go further you see what has been making the light; it’s a massive gem. Under the gem reads a message carved into stone: “do not steal from royalty”. 
+
+    question: Do you take the gem, yes or no?
+
+
+    options:
+target: 9
+          keyphrases:
+              - yes
+    - take it
+target: 10
+          keyphrases:
+              - no
+
+
+
+#8 go around
+8: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You go around the edge of the pond, carefully avoiding making any contact with the water and you feel the rumbling subside. As you make it to the other end of the room, you enter a door and hear “Halt!”. You stop in your place and are confronted by two frog guards. “Who goes there?” one asks as they approach. Stunned you are silent, you’ve never seen anything like it. The two beings approaching you are human-sized frogs standing on their hind legs. They come closer and are similarly stunned. “What is that?” you hear one utter. You attempt to retreat just to hear a massive splash behind you. Now you must make a decision, 
+
+
+    question: Do you go towards the guards or back where the splash came from?
+
+
+    options:
+target: 11
+          keyphrases:
+              - towards the guards
+    - forwards
+target: 12
+          keyphrases:
+              - back
+    - splash
+
+
+#9 take the gem:
+9: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You reach out towards the gem, and immediately feel the water rumble more intensely and bubbles rise from the depths, surrounding you and pushing you towards the surface. You rise to the surface of the water and swim as fast as you can towards solid footing. Right as you climb back up onto solid ground the pool erupts and drenches you with water. As you clear your eyes you see a massive frog with a tiny crown on its head floating before you. It lets out a colossal “RIBIT” and gazes into your eyes. You are stunned before you can even think the frog booms “What do you think you are doing?” Without giving you time to respond, the frog bellows “why have intruded into my domain? Do you think you can just come into my kingdom and steal from me? Don’t you know I’m the frog king?” You step back in awe as the frog king approaches you. “I am very sorry to do this to you, but you must exit my domain” As soon as he has finished speaking, you are lifted by a geyser of water and pushed out of the sewers. 
+Maybe I can link to someone?
+
+    options:
+target: end
+
+
+#10 do not try to take the gem:
+10: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You stare in awe at the gem, it unnaturally radiates light, illuminating the area. Looking around, you can see an odd symbol etched into the stone. It’s a square with an inscription: “1st piece”. You think to yourself how odd that is as you swim back towards the surface. As you climb out of the water, you look back into it, only to see a massive object making its way to the surface behind you. You watch petrified, as it surfaces smoothly, hardly making a ripple in the serene waters. It takes you a second to fully comprehend what has emerged, but you soon realize that it is a massive frog with a tiny crown upon its head. It points to you and says “I have not seen a being like you in quite some time, usually we don’t happen upon curious individuals. You are, of course, free to roam my city as you please. Just don’t make too much trouble for my loyal citizens.” He hands you a pin and tells you “that should get you past the guards, please enjoy yourself.” However, as soon as you leave, the king stops you by asking “Would you do me a favor? A week ago someone stole a gem from me similar to the one you saw in the pool. Would you be willing to help me find it, maybe you’ll have more luck with an outside perspective”
+
+
+
+    question:  Would you like to help the frog king?
+
+
+    options:
+target: 13
+          keyphrases:
+              - yes
+target: 14
+          keyphrases:
+              - no
+
+
+
+#11 go towards the guards:
+11: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You decide against going towards the massive splash, instead choosing to try to reason with the guards. Before you can get a word out though, the guards grab you by your arms and bring you back into the room where the splash came from.
+
+    options:
+target: 12
+
+
+#12 Go towards the splash
+12: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text: You are followed into the room by the guards and you see the source of the splash, it is a massive frog with a tiny crown upon its head. The frog turns to you and gives a  “ribit” followed by a question to the  guards “who have you brought me?” “Someone who was sneaking out of your quarters sir” the guard responds. “Hmmm, well they didn’t touch anything in here” the frog king croaks. You notice their attention has briefly shifted away from you, do you run out of the sewers or stay to listen to what the frog king has in store for you?
+
+    options:
+target: 15
+          keyphrases:
+              - run
+    - leave
+target: 16
+          keyphrases:
+              - stay
+    - listen
+
+
+
+#13 You decide to help the frog king
+13: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:  “Thank you, I appreciate your help” the frog king croaks. “One final thing, I think you may want to wear this mask so you don’t look like such an outsider. Thanks again, please be on your way.” You head out, stepping through the doors with your mask on  and into the sprawling underground city. The city is absolutely electric, stepping into it is amazing. Hundreds of citizens consisting of rats, frogs, and a few crocodiles are all moving past eachother completely independently in a seemingly chaotic fashion yet everyone gracefully avoids eachother. You are awestruck for a few seconds before finally snapping out of it. You now need to figure out what happened to the king’s gem. Surveying the area
+
+Question: you believe that there are two best options 1. Go to the bank and investigate to see if there has been any suspicious deposits 2. Go to the market to get a better grasp on what happens in the city
+
+
+    options:
+target: 17
+          keyphrases:
+              - bank
+target: 18
+          keyphrases:
+              - market
+
+
+#14 You decide not to help the frog king
+14: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:  You reject the frog king’s ask for help and in response the king says: “I understand. Regardless, I hope you enjoy the town.“ You walk through a door on the other end of the room where there awaits two bewildered frog guards. They look at you, and begin to approach until they see you have a pin from the king. As you leave you hear one say: “What was that? And how did it get access to the king?” However, they do nothing to stop you. You to progress into the city, walking directly into a massive underground kingdom, filled with upright frogs, rats in suits, and even a few crocodiles. Instantly you know that this is where you would like to end your adventure. You step into the city ready to start your new life.
+
+
+
+    options:
+target: end
+
+
+
+
+#15 - run from the conversation
+15: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:  You take off running, full sprint out the way you came in. After you leave the massive frog questions the guards “huh, what do you think they were running from?”. 
+
+# TODO
+# Transition to another storyline or just have them say no more adventuring today 
+
+    options:
+target: end
+ 
+
+
+
+#16 - stay and listen
+16: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:   You decide to stay for the rest of the conversation with the frog, after all you have not done anything wrong. The frog turns to you and says: “Hello stranger, I am the frog king. I’ve ruled these parts for quite some time, yet I’ve only seen a few of your kind. What brings you this way?” Stunned by the size of the frog floating before you, you are unable to utter a word. Filling the gap in conversation the king picks up stating: “Whatever brings you here, I am certain we should not be so quick to judge you. After all you haven’t done anything wrong.” You start to feel a bit relieved, as he continues: “I do apologize for this inconvenience, you are free to enjoy the sights of my city, I just ask that you do not make too much trouble for my citizens. Please enjoy yourself. Oh and next time, please use the other door.“ You are free to go now; however, as soon as go to leave, the king stops you by asking “Would you be willing to do me a favor? A week ago someone stole a gem from me similar to this one.” He quickly dives down and produces a massive gem that seems to be emitting light held on a pedestal with a small circle engraving. “Would you be willing to help me find it? my guards have been searching for quite some time and maybe you’ll have more luck with your outside perspective” 
+
+
+question: Would you like to help the frog king?
+
+
+    options:
+target: 13
+          keyphrases:
+              - yes
+    - sure
+target: 14
+          keyphrases:
+              - no
+    - nah
+
+
+#17 You go to the bank to start your investigation
+
+17: 
+lines:
+voice: high
+    music: NULL
+    gesture: Circle
+    text:   You head into the bank and have to wait in line for what feels like an eternity. You finally make it to the front of the line you are met with a teller at the desk who says: “Hello, how may I help you?” You ask about any suspicious activities, more specifically if anyone deposited something massive lately or put a ton of money in an account recently. The teller just gives you a bland “no” and tells you “look, I can’t tell you anything about our clients if you want any information about stuff like that you’ll have to move elsewhere.” 
+
+question: Now that you’ve ran into that dead end, would you like to continue your search at the market or return to the king to ask for help?
+
+
+    options:
+target: 23
+      
+
+
+
+#18 You go to the market to begin your investigation
+18: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:   You head into the massive market, and it seems everything is for sale. Walking from stall to stall you even witness a man sell his entire stall, including the stall that housed the stuff. The buyer then just hops behind the stall and begins to sell his newly acquired stock. You walk up to the man and inquire about any gems being sold. He says “Yeah, of course I know all about gems, see! Look at my selection. I have anything you could possibly want, for a price of course.” You realize that you are not going to get anywhere asking for free information here, everything has a price. Because you do not have any money to spend here, you feel like this is just going to be a dead end. 
+
+
+question: To continue your search would you like to continue your search at the bank or just return to the king to ask for help?
+
+
+    options:
+target: 23
+
+
+
+#19 You go up the stairs
+19: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: Circle
+    text:   You head up the stairs into the natural light shining down on you. With each step, the path gets even brighter until you reach the top where you must lift a grate. Upon doing so you are temporarily blinded by the light until you recognize your surroundings. You have managed to take a very roundabout way into the town.
+
+
+    options:
+target: TBD
+
+
+
+#20 You go up to the door
+20: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: knocking
+    text:   You walk to the door on the other end of the hallway and decide to knock (knock knock). Then you are asked for the passcode; thinking quickly you utter the only phrase that comes to your mind “Purple giraffe lizard!” After confidently stating those words, the person behind the door just says: “Uh, no it’s a knock”. Disappointed, you turn around just to be immediately confronted by a massive rat standing on its hind legs. It pays no mind to your surprise and asks: “Hey, how do you feel about doing a job?” 
+
+
+question: Would you like to accept the job?
+
+
+    options:
+target: 21
+          keyphrases:
+              - yes
+    - take it
+target: 22
+          keyphrases:
+              - no
+    - don’t
+
+
+#21 You accept his proposal
+21: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: beaconing
+    text:   You nod to the rat, showing you want the job. He says “follow me” and leads you to a seemingly solid wall where he pulls back a curtain and reveals an entrance. Following him in, he begins to explain the job “the job is simple, all you have to do is help us by holding a door open, simple job right? Anyways, the pay is good and it shouldn’t take long.” You follow behind him until you approach the door with a different rat holding it open. “Okay, here it is, we only need it open for a minute.” You step in and hold the door for the rat and they hurry off. A few minutes pass and you begin to feel as if you have been tricked, maybe they were just seeing how long you would stand there. Just as you are thinking of leaving, the two rats sprint through the door holding a massive gem. Before you have time to process you are grabbed by guards. They are frog-men that say “Hey, why are you stealing from the king?” Before you can fully understand what just happened they’ve put you into a jail cell. After a few minutes a frog walks in and sits in front of your cell “So, I hear that you have been involved in quite the heist. Odd that you would be an outsider partaking in such an event so I would like to hear your side.” You proceed to tell him you have no idea what just happened and that you were looped into the entire mess. After hearing your side of the story, the frog decides to let you go stating: “I believe you; however, you cannot come back to our city until we get this under control. Sorry, but you must leave.” He has you leave the cell and you progress back to the outside world and think that you probably shouldn’t get involved with anything else today.
+
+
+    options:
+target: end
+
+
+
+
+#22 You do not accept
+22: 
+lines:
+voice: NULL
+    music: NULL
+    gesture: knocking
+    text:   You reject his proposal with a nod and then head up the stairs up into the natural light shining down on you. With each step, the path gets even brighter until you reach the top where you must lift a grate. Upon doing so you are temporarily blinded by the light until you recognize your surroundings. You have managed to take a very roundabout way into the town.
+options:
+target: TBD
+    
+
+    
+#23 Continue the search
+23: 
+lines:
+voice: NULL
+    music: knocking
+    gesture: knocking
+    text:   As you leave, you notice a suspicious looking citizen creeping into an alleyway, curious, you follow him. You make your way through the maze of a city, following the figure through twisting and turning alleyways as you wonder to yourself about who could have possibly designed the city as nothing appears to be linear. Finally, you arrive at a carved wooden door where the suspect knocks 5 times and the door swings open. The suspect quickly rushes in and the door slams behind him. After a few minutes pass you go to the door and repeat the same action, knocking 5 times and are rushed into the room. It’s incredibly dark in the room and you can just see the outlines of individuals surrounding a source of light. Sticking to the edges of the room, you begin making your way to a better viewpoint when you see it. The light is coming from the stolen gem, what luck! You think to yourself, but how are you going to get it out? 
+
+
+
+question: Would you like to just walk up and take it? Or would you like to wait for a while?
+
+
+    options:
+target: 24
+          keyphrases:
+              - yes
+    - grab
+    - take it
+target: 25
+          keyphrases:
+              - no
+    - wait
+    - don’t
+
+#24 Just take it
+24: 
+lines:
+voice: NULL
+    music: knocking
+    gesture: knocking
+    text:  You simply walk up to the massive gem and grab it. Your confidence in grabbing the gem puts you above suspicion and you walk out of the room. 
+
+
+    options:
+target: 29
+
+
+
+#25 Wait
+25: 
+lines:
+voice: NULL
+    music: knocking
+    gesture: knocking
+    text:   You decide to wait for a while and see if any opportunities present themselves. After a few minutes the small croud gathered around the gem begins to disperse, a few of them go deeper into the building while some leave entirely, now there are less individuals around the gem, making a potentially better time to strike. 
+
+
+
+
+question: Would you like to take the gem, or continue to wait?
+
+
+    options:
+target: 24
+          keyphrases:
+              - yes
+    - grab
+    - take it
+target: 26
+          keyphrases:
+              - no
+    - wait
+    - don’t
+
+
+#26 Wait
+26: 
+lines:
+voice: NULL
+    music: knocking
+    gesture: knocking
+    text:   You decide to wait for a while longer and see if any new opportunities present themselves. Almost everyone has left the gem, there are maybe 1 or 2 stragglers still hanging around, giving you the best time to strike. 
+
+question: Would you like to take the gem, or create a distraction?
+
+    options:
+target: 24
+          keyphrases:
+              - yes
+    - grab
+    - take it
+target: 26
+          keyphrases:
+              - no
+    - wait
+    - don’t
+
+
+#27 Make a distraction
+27: 
+lines:
+voice: NULL
+    music: knocking
+    gesture: knocking
+    text:   You decide to create a distraction and draw the remaining people away from the gem. To do so, you grab a small stone off the ground and throw it into the opposite corner of the room. Crash, it sounds as if you’ve managed to hit some sort of glass. “Oh, no!” one of the stragglers exclaims, something has shattered my favorite vase. Come help me clean it up” he continues and the gem is completely unguarded. While everyone is distracted you walk up and take the gem
+
+    options:
+target: 29
+
+
+
+#29 You successfully retrieved the gem
+29: 
+lines:
+voice: NULL
+    music: knocking
+    gesture: knocking
+    text:   You have successfully retrieved the gem for the king. You rush out of the door and back into the maze of alleyways, after about an hour of being hopelessly lost, you emerge back into a familiar area and head towards the frog king’s home. Once you arrive you walk triumphantly past the guards, holding the gem in front of you to let them know you should be there. Once you arrive in the frog king’s room you present it to him and he lets out a booming “Ribbit, thank you outsider. I knew I could count on you to aid this kingdom. As a token of my appreciation we will hold a feast and I will award you with a home within my magnificent kingdom.” After the feast and party, you are shown to your new home where you hope to have more adventures; however, your story for today is at an end.
+
+    options:
+target: end
+
