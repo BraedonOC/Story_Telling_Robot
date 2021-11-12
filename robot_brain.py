@@ -18,11 +18,13 @@ FAST_MODE = False
 
 interesting_voices = {'narrator' : 1,
           'adult male' : 0.9,
+          'mysterious' : 0.88,
           'boy child' : 1.2,
           'evil' : 0.5 
       }
 
 bland = {'narrator' : 1,
+          'mysterious' : 1,
           'adult male' : 1,
           'boy child' : 1,
           'evil' : 1 
@@ -185,6 +187,9 @@ class RobotBrain:
                 # order and structure
                 keyphrase_sets = self.get_keyphrase_sets(current_id)
                 user_choice = self.listen(keyphrase_sets) 
+                if user_choice = "exit":
+                    return 
+                    
                 if user_choice != None:
                     break
 

@@ -39,9 +39,9 @@ def create_node():
         if line_dict["voice"] == "":
             print("setting voice to be default narrator")
             line_dict["voice"] = "narrator"
-        if line_dict["gesture"] == "idle":
+        if line_dict["gesture"] == "":
+            line_dict["gesture"] = "idle"
             print("setting gesture to be default gesture")
-            line_dict["gesture"] = narrator
         node["lines"].append(line_dict)
         if input("Would you like to enter another line? y/n  ").upper() != "Y":
             break
@@ -155,6 +155,7 @@ def create_story_node():
 
 def create_story(file_to_load = None):
     global story
+    print("\n\n")
     print(" ________  _________  ________  ________      ___    ___       ___    ___ ________  _____ ______   ___       ___  ________  _______   ________     ")
     print("|\   ____\|\___   ___\\   __  \|\   __  \    |\  \  /  /|     |\  \  /  /|\   __  \|\   _ \  _   \|\  \     |\  \|\_____  \|\  ___ \ |\   __  \    ")
     print("\ \  \___|\|___ \  \_\ \  \|\  \ \  \|\  \   \ \  \/  / /     \ \  \/  / | \  \|\  \ \  \\\__\ \  \ \  \    \ \  \\|___/  /\ \   __/|\ \  \|\  \  ") 
