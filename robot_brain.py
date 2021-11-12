@@ -1,7 +1,6 @@
 import yaml 
 import qi
-import argparse
-import sys
+import argparse import sys
 import time
 from naoqi import ALProxy
 from utils import *

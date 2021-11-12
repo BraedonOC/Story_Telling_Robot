@@ -672,15 +672,11 @@ pay_bridge_1:
     voice: null
   options:
   - target: end
-1:
+TBD:
   lines:
   - gesture: ''
-    text: there was a massive tree
+    text: butt
     voice: narrator
   options:
-  - keyphrases:
-    - ble
-    - cre
-    - ald
-    target: ''
-  question: how are you today?
+  - keyphrases: []
+    target: 1

@@ -51,10 +51,11 @@ def create_node():
     print("        Create Question")
     print("..................................")
 
-    while node["question"] == "":
-        print()
-        print("What is the question associated with this node?")
-        node["question"] = input()
+    print()
+    print("What is the question associated with this node?")
+    node["question"] = input()
+    if node["question"] == "":
+        node.pop("question")
 
     # loop for creating options
     print("..................................")
@@ -74,18 +75,24 @@ def create_node():
             elif user_option.upper() == 'NEW':
                 node_name = input("Enter name or note associated with this node (doesn't need to be unique): ")
                 node_name_map[next_node_number] = node_name
+                option["target"] = node_name
                 target_node_id = next_node_number
                 next_node_number += 1
                 break
             else:
+                target_node_id = user_option
                 try:
                     target_node_id = int(user_option)
-                    if target_node_id not in story.keys():
-                        print("That node hasn't been created yet, if you would like to add a new node type 'new'")
-                except ValueError:
-                    print("Invalid node number")
-                    print("starting over")
+                except:
+                    pass
+                if target_node_id not in story.keys():
+                    print("That node hasn't been created yet, if you would like to add a new node type 'new'")
+                option["target"] = target_node_id 
                 break
+
+        if "question" not in node.keys():
+            node["options"].append(option)
+            break
 
         while True:
             print(f"Add a keyphrase associated with this answer or hit 'enter' to finish writing keyphrase")
@@ -126,13 +133,14 @@ def create_story_node():
             story[new_node_id] = create_node()
             return new_node_id
 
+        new_node_id = user_node_input
         try:
-            new_node_id = int(user_node_input.upper())
-        except ValueError:
-            print("I CAN'T CONVERT THAT TO AN INT!!!")
-            print("Starting over node creation because I'm lazy")
-            continue
-        if int(user_node_input) not in empty_references:
+            int_id = int(new_node_id)
+            new_new_id = int_id
+        except:
+            pass
+
+        if user_node_input not in empty_references:
             print("That isn't an empty reference!!!")
             print("Starting over node creation because I'm lazy")
             continue
