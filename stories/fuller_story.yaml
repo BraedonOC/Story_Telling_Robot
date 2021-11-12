@@ -221,7 +221,6 @@ pay_bridge_1:
             target: 5
             keyphrases:
             - left
-            - right
         -
             target: 6
             keyphrases:
@@ -1470,6 +1469,7 @@ end:
             target: exit 
             keyphrases:
                 - 'no'
+exit: 0
 
 
         

@@ -14,8 +14,8 @@ from utils import *
 #        self.params = params  # we may want to expand params into more arguments
 
 
-NAO_MODE = False 
-FAST_MODE = False 
+NAO_MODE = True
+FAST_MODE = True
 
 interesting_voices = {'narrator' : 1,
           'adult male' : 0.9,
@@ -45,7 +45,7 @@ class RobotBrain:
        # self.audio.setVolume(0.1)
             
         parser = argparse.ArgumentParser()
-        parser.add_argument("--ip", type=str, default="138.67.233.147",
+        parser.add_argument("--ip", type=str, default="138.67.235.74",
                             help="Robot's IP address. If on a robot or a local Naoqi - use '169.254.74.67' (this is the default value).")
         parser.add_argument("--port", type=int, default=9559,
                             help="port number, the default value is OK in most cases")
@@ -148,14 +148,17 @@ class RobotBrain:
             print(self.mem.getData('WordRecognized'))
 
         else:
-            user_response = raw_input() 
+            user_response = raw_input().lower()
+#            print("raw response: {}".format(user_response))
+#            for keyphrase_set_i in range(len(keyphrase_sets)):
+#                if user_response in keyphrase_sets[keyphrase_set_i]:
+#                    # might also want to check if any words overlap between the user input 
+#                    # and the actual keyphrase
+#                    # set the choice that the user made to be equal to 
+#                    user_choice = keyphrase_set_i  
             for keyphrase_set_i in range(len(keyphrase_sets)):
                 if user_response in keyphrase_sets[keyphrase_set_i]:
-                    # might also want to check if any words overlap between the user input 
-                    # and the actual keyphrase
-                    # set the choice that the user made to be equal to 
-                    user_choice = keyphrase_set_i  
-            return user_choice
+                    return keyphrase_set_i
         
     def read_story_yaml(self, story_filepath):
         with open(story_filepath, 'r') as sf:
@@ -172,15 +175,20 @@ class RobotBrain:
         current_id = 'intro'
 
         while True:
+            if current_id == "exit":
+                return
             # read the story
             print('read {} lines'.format(len(self.story[current_id]['lines'])))
+            ble = True 
             for line in self.story[current_id]['lines']:
                 self.say(line['text'], line['voice'])
 
             while True:  # loop util it gets a response, we might want to do this differently 
                 if 'question' not in self.story[current_id].keys():
                     current_id = self.story[current_id]['options'][0]['target']
+                    ble = False 
                     break
+                    
                 self.say(self.story[current_id]['question'], 'narrator', True)
 
                 # each option has a set of keyphrases associated with it
@@ -188,15 +196,20 @@ class RobotBrain:
                 # order and structure
                 keyphrase_sets = self.get_keyphrase_sets(current_id)
                 user_choice = self.listen(keyphrase_sets) 
-                if user_choice = "exit":
-                    return 
-                    
+
                 if user_choice != None:
+                    if self.story[current_id]['options'][user_choice]['target'] == "exit":
+                        return 
                     break
+                    
 
                 self.say('THAT\'S NOT AN OPTION... please try again', 'evil')
             # the target of the option stores the node that we go to if the user chooses this option 
-            current_id = self.story[current_id]['options'][user_choice]['target']
+            print("current id: {}".format(current_id))
+            print("user choice : {}".format(user_choice))
+            print("target value: {}".format(self.story[current_id]['options'][user_choice]['target']))
+            if ble:
+                current_id = self.story[current_id]['options'][user_choice]['target']
 
 
 if __name__ == "__main__":
