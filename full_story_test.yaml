@@ -213,7 +213,9 @@ pay_bridge_1:
   question: would you like to dive into the water or find a way around the pool?
 6:
   lines:
-  - Text: You make your way through the right cave, slowly having to duck down further
+  - gesture: crouch
+    music: null
+    text: You make your way through the right cave, slowly having to duck down further
       and further. It gets to a point where you are crawling, having to move slowly
       to avoid any scrapes. Then you feel a rumbling, this one feels more intense
       than before, leaving everything around you shaking violently. You feel bits
@@ -225,8 +227,6 @@ pay_bridge_1:
       two possible ways for you to go now that you cannot go back. You see that there
       is a set of stairs leading up to a source of natural light above you and in
       front of you, there is an embroidered door. Which way would you like to go?
-    gesture: crouch
-    music: null
     voice: narrator
   options:
   - keyphrases:
@@ -1169,11 +1169,65 @@ end:
     - 'no'
     target: 55
   question: Would you like to hear another story
-TBD:
+tree_gems:
   lines:
   - gesture: idle
-    text: hello
+    text: 'The gems look like they''ve been embedded into the tree and as you look
+      closer words seem to appear under their surface '
+    voice: narrator
+  - gesture: idle
+    text: This way to felmont bridge
+    voice: mysterious
+  - gesture: idle
+    text: an arrow forms in the bottom gem and points towards the lake
     voice: narrator
   options:
-  - keyphrases: []
-    target: ''
+  - keyphrases:
+    - go back
+    - back
+    - bridge
+    target: bridge
+  - keyphrases:
+    - new bridge
+    - lake
+    - forward
+    target: bridge_2
+  question: would you like to go back to the bridge behind you or continue towards
+    the lake?
+bridge_2:
+  lines:
+  - gesture: idle
+    text: You keep walking and see a beautiful bridge.  You can see a group of people
+      laying under the bridge relaxing and one of them comes up to you
+    voice: narrator
+  - gesture: idle
+    text: hello traveler, you have made the right choice of bridges, feel free to
+      cross without payment
+    voice: woman
+  - gesture: idle
+    text: one of them says looking over at you.  As you approach you notice that the
+      bottom half of these people is that of beavers
+    voice: narrator
+  options:
+  - keyphrases:
+    - other one
+    - go back
+    target: bridge
+  - keyphrases:
+    - 'cross '
+    - cross this bridge
+    target: cross
+  question: would you like to cross this bridge or go back to the other one?
+cross:
+  lines:
+  - gesture: idle
+    text: you cross the bridge and then continue walking, eventually you see an entrance
+      to some sewers
+    voice: narrator
+  options:
+  - keyphrases:
+    - sewers
+    - go into sewers
+    - in
+    target: 2
+  question: Do you want to keep walking or go into the sewers?
