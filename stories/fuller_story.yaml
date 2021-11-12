@@ -1246,7 +1246,10 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: You win the game of hide and seek. The other children give you a trophy that says champion of hide and seek! Congratulations, you did it!
-           
+            
+    options:
+        - 
+            target: end 
 
 63:
     lines:            
@@ -1266,6 +1269,11 @@ pay_bridge_1:
             gesture: Null
             text: Hey silly, you forgot to hide! Maybe next time we can play hide and seek again.
 
+    options:
+        - 
+            target: end 
+
+           
 61:
     lines:            
         - 
@@ -1284,6 +1292,9 @@ pay_bridge_1:
             gesture: Null
             text: I found you! I win again! let's play again another time. I'll see you later.
 
+    options:
+        - 
+            target: end 
 59:
     lines:            
         - 
@@ -1301,6 +1312,9 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: I found you! That's a good hiding spot. But I win again! Let's play again another time, I'll see you again another time.
+    options:
+        - 
+            target: end 
 
 
 57:
@@ -1344,6 +1358,9 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: You win the game of hide and seek. The other children give you a trophy that says champion of rock paper scissors! Congratulations, you did it!
+    options:
+        - 
+            target: end 
 
 71:
     lines:            
@@ -1352,6 +1369,10 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: Yay, I win! We should play a game another time. I'll see you later!
+    options:
+        - 
+            target: end 
+   
 
 53:
     lines:            
@@ -1412,6 +1433,9 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: That's okay! It's getting a little late anyway. We should all go back and sleep for tonight anyway. Maybe we can play some other time. I'll see you later!
+    options:
+        - 
+            target: end 
            
 
 55:
@@ -1421,7 +1445,10 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: That's okay! It's getting a little late anyway. Maybe we should sleep for the night so we are ready for tomorrow! Sleeping a full night's sleep is really important. Maybe we can go on an adventure another time! I'll see you again.
-   
+    options:
+        - 
+            target: end 
+
 end:
     lines:
         - 

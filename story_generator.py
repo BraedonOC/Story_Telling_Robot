@@ -111,9 +111,14 @@ def create_node():
 def find_empty_references():
     empty_references = []
     for key in story.keys():
-        for option in story[key]["options"]:
-            if option["target"] not in story.keys():
-                empty_references.append(option["target"])
+        try:
+            for option in story[key]["options"]:
+                if option["target"] not in story.keys():
+                    empty_references.append(option["target"])
+        except KeyError:
+            print(f"node {key} caused an error")
+
+
     empty_references = list(dict.fromkeys(empty_references))
     return empty_references
 
@@ -133,13 +138,12 @@ def create_story_node():
             story[new_node_id] = create_node()
             return new_node_id
 
-        new_node_id = user_node_input
         try:
-            int_id = int(new_node_id)
-            new_new_id = int_id
+            int_id = int(user_node_input)
+            user_node_input = int_id
         except:
             pass
-
+        new_node_id = user_node_input
         if user_node_input not in empty_references:
             print("That isn't an empty reference!!!")
             print("Starting over node creation because I'm lazy")
@@ -182,5 +186,5 @@ def create_story(file_to_load = None):
 
     write_story_to_yaml("full_story_test")
 
-create_story("stories/full_story.yaml")
+create_story("stories/fuller_story.yaml")
 
