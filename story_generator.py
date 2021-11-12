@@ -110,7 +110,8 @@ def find_empty_references():
     empty_references = list(dict.fromkeys(empty_references))
     return empty_references
 
-def create_story_node(empty_references): 
+def create_story_node(): 
+    global new_node_id
     while True:
         empty_references = find_empty_references()
         print("Would you like to create a new node or fill in an option? y/n ")
@@ -136,7 +137,7 @@ def create_story_node(empty_references):
             print("Starting over node creation because I'm lazy")
             continue
 
-        story[] = create_node()
+        story[new_node_id] = create_node()
         return new_node_id
 
 
@@ -162,7 +163,7 @@ def create_story(file_to_load = None):
         print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
         print("         Creating Story Node           ")
         print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-        create_story_node(empty_references)
+        create_story_node()
         print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
         print("      Node Creation Complete")
         print("Would you like to create another node? y/n ")

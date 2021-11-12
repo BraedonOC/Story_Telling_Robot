@@ -14,14 +14,22 @@ from utils import *
 #        self.params = params  # we may want to expand params into more arguments
 
 
-NAO_MODE = True 
-USE_LISTENER = False
+NAO_MODE = False 
 FAST_MODE = False 
-voices = {'narrator' : 1,
+
+interesting_voices = {'narrator' : 1,
           'adult male' : 0.9,
           'boy child' : 1.2,
           'evil' : 0.5 
-          }
+      }
+
+bland = {'narrator' : 1,
+          'adult male' : 1,
+          'boy child' : 1,
+          'evil' : 1 
+      }
+
+voices = bland
 
 class RobotBrain:
     def __init__(self):
@@ -55,8 +63,6 @@ class RobotBrain:
             sys.exit(1)
             pass
 
-        if USE_LISTENER:
-            self.listener = self.session.service('ALSpeechRecognition')
         self.mem = self.session.service('ALMemory')
         self.listener = self.session.service("ALSpeechRecognition")
 
@@ -70,17 +76,18 @@ class RobotBrain:
             voice = 'narrator'
 
         if voice == 'evil':
-            self.audio_device.setOutputVolume(70)
+            if NAO_MODE:
+                self.audio_device.setOutputVolume(70)
         if FAST_MODE and not question and voice != 'evil':
             text_to_say = text_to_say[0:20]
         if NAO_MODE:
             # self.talker.setParameter("pitchShift", voices[voice])
             self.talker.setParameter("pitchShift", voices[voice])
             self.talker.say(text_to_say)
+            self.audio_device.setOutputVolume(50)
         else: 
             print('{} voice: {}'.format(voice, text_to_say))
             print('---------------------------------------')
-        self.audio_device.setOutputVolume(50)
 
         
     def listen(self, keyphrase_sets):
@@ -191,3 +198,4 @@ if __name__ == "__main__":
     test_brain = RobotBrain() 
     test_brain.read_story_yaml('stories/full_story.yaml')
     test_brain.tell_story()
+
