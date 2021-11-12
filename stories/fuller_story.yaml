@@ -779,12 +779,12 @@ pay_bridge_1:
             voice: narrator
             music: Null
             gesture: Circle
-            text:   You head up the stairs into the natural light shining down on you. With each step, the path gets even brighter until you reach the top where you must lift a grate. Upon doing so you are temporarily blinded by the light until you recognize your surroundings. You have managed to take a very roundabout way into the town.
+            text:   You head up the stairs into the natural light shining down on you. With each step, the path gets even brighter until you reach the top where you must lift a grate. Upon doing so you are temporarily blinded by the light until you recognize your surroundings. You have managed to take a very roundabout way into a town.
 
 
     options:
         -
-            target: TBD
+            target: 51
 
 
 
@@ -1268,6 +1268,9 @@ pay_bridge_1:
             music: Null 
             gesture: Null
             text: Hey silly, you forgot to hide! Maybe next time we can play hide and seek again.
+    options:
+        - 
+            target: end
 
     options:
         - 
@@ -1464,9 +1467,11 @@ end:
                 - 'yes'
 
         - 
-            target: 55
+            target: exit 
             keyphrases:
                 - 'no'
+
+
         
 
        

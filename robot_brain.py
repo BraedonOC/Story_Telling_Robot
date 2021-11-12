@@ -1,6 +1,7 @@
 import yaml 
 import qi
-import argparse import sys
+import argparse 
+import sys
 import time
 from naoqi import ALProxy
 from utils import *
@@ -195,6 +196,6 @@ class RobotBrain:
 
 if __name__ == "__main__":
     test_brain = RobotBrain() 
-    test_brain.read_story_yaml('stories/full_story.yaml')
+    test_brain.read_story_yaml('stories/fuller_story.yaml')
     test_brain.tell_story()
 
