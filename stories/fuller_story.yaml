@@ -1,0 +1,1445 @@
+intro:
+    # the "lines" key includes information on different lines that will be used thoughtout
+    # whatever the current story segment is.
+    # this will allow different voices between characters in dialogue along with 
+    # various music (if possible) and gestures
+    lines:            
+        - 
+            voice: narrator 
+            music: Null 
+            gesture: Null
+            text: You have been walking for days on your way to Bleblob, 
+                    the largest town in the region.  At long last you can 
+                    see the towers of Bleblob towering over the hills in the distance.  
+                    The path stretches out in front of you as you prepare for this day's 
+                    journey.  
+                    After several hours of walking you come to one of the large rivers that 
+                    surround Bleblob.  Where you stand the trail slipts into two paths, one going 
+                    to your right towards what appears to be a lake, and one going to your left towards 
+                    a bridge.  The bridge looks relatively sturdy and well kept.  The logs it's made out 
+                    of appear polished and they sparkle as you tilt your head to look at them.  
+                    The lake to your right looks less inviting, but the path towards it is well troden 
+                    and confident.  From what you can see of the lake it doesn't look particularly large, 
+                    and might provide an alternative path accross the river.
+
+    question: Do you 
+                want to go left to the bridge or right towards the lake?
+
+    options:
+        - 
+            target: bridge 
+            keyphrases: 
+                - left
+                - bridge 
+                - brave the bridge
+                - I want to brave the bridge 
+                - I'll try the bridge 
+            clarification: you want to go right?
+
+        - 
+            target: lake 
+            keyphrases: 
+                - right
+                - lake 
+                - find another way around
+                - I want to go to the lake 
+                - I'll try to find another way around
+            clarification: you want to go left?
+
+
+lake:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: As you approach the lake you notice a family of ducks paddling arround under the water in the 
+                old willow tree's shade.  They paddle in circles occasionally dipping their heads into the water.  
+                On the other side of the lake appears to be another bridge, this one more elaborate than the last. 
+                Small water wheels hang from the bottom of the bridge, slowly turning in the water below.  
+                As the trail comes upto the old willow tree you notice that tree several carefully cut gems are embedded into the bark of the tree.  
+           
+    question: would you like to investigate the gems or go towards the bridge? 
+    options:
+        - 
+            target: tree_gems 
+            keyphrases: 
+                - gems 
+                - investigate
+            clarification: look investigate the tree gems?
+
+        - 
+            target: bridge_2 
+            keyphrases: 
+                - bridge
+                - cross
+            clarification: you want to cross the bridge?
+
+bridge:
+    lines:            
+        - 
+            voice: narrator 
+            music: Null 
+            gesture: Null
+            text: As you approach the bridge you hear a thumping on the ground and a voice from under the bridge 
+                    yell 
+
+        - 
+            voice: adult male
+            music: Null 
+            gesture: Null
+            text: Hey Jeremy we've got a crosser. 
+
+        - 
+            voice: narrator 
+            music: Null 
+            gesture: Null
+            text: You hear movement from under the bridge and from the bellow the bridge you see a human boy's 
+                    face appear.  He looks at you and hops out from under the bridge revealing the bottom half 
+                    of his body, which appears to be that of a beaver.  He has a large flat tail the drags on the
+                    ground behind him as he jumps up a small staircase that runs from under the bridge upto where 
+                    you are.     
+
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Hello, thank you for choosing the Tillbert bridge, the most convenient bridge in town.  Crossing will cost you 5 copper.
+
+    question: Would you like to pay to cross the bridge? 
+    options:
+        - 
+            target: pay_bridge_1 
+            keyphrases: 
+                - 'yes' 
+                - pay
+
+        - 
+            target: dont_pay_bridge_1 
+            keyphrases: 
+                - 'no'
+
+dont_pay_bridge_1:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: The beaver boy looks at you angrily then jumps into the air and smacks your face with his tail.  Everything goes black.          
+    options:
+        -
+            target: end 
+
+pay_bridge_1:
+    lines:
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Why thank you, enjoy your trip! 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You cross the bridge and continue walking along the path and eventually see a sewer entrance on the side of the path  
+
+    question: Do you want to keep walking or go into the sewers?
+    options:
+        - 
+            target: 1
+            keyphrases:
+                    - keep walking
+                    - continue
+                    - brave the bridge
+                    - I want to brave the bridge
+                    - I'll try the bridge
+            clarification: you want to go right?
+
+        - 
+            target: 2
+            keyphrases:
+                - go in the sewers
+                - in
+                - sewers
+            clarification: you want to go into the sewers?
+
+
+2: 
+    lines:
+        - voice: narrator
+          music: Null
+          gesture: Null
+          text: You cautiously approach the gaping jaws of the sewer entrance, and feel as if something is pulling you in. Going deeper into the sewers the light around you quickly fades. 
+          
+    question: Would you like to take out a flashlight yes or no?
+
+    options:
+        - 
+            target: 3
+            keyphrases:
+                - 'yes'
+                - flashlight
+                - take out flashlight
+            clarification: you would like to take out your flashlight?
+        -
+            target: 4
+            keyphrases:
+                - dont
+                - 'no'
+            clarification: you don't want to take out your flashlight?
+
+
+#4 no flashlight
+
+4: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: armsOut
+            text: you keep walking in without the use of your flashlight. Bumbling forwards, you outstretch your arms to try to feel where you are going, but it's useless, you still walk straight into a wall. Instead of continuing any further you decide to turn your flashlight on.
+
+    options:
+        -
+            target: 3
+          
+
+
+#3 with flashlight
+3: 
+    lines:
+        -
+            voice: narrator
+            music: Null #dripping maybe
+            gesture: Null
+            text: You turn on the flashlight, revealing the surrounding tunnel. It's massive, the tunnel seems to extend into a few branching systems, and looking back you can barely see the light of day from where you came in. You continue along the tunnel, delving deeper into the system all the while stepping carefully as to not slip on the slime coating the interior of the sewer. As you go in further you begin to feel a slight vibration under your feet however, you are unable to fully make out where it is coming from. Eager to continue towards the source, you rush forwards down the straight hallway until you come to a branch. To your left is a tunnel that is constantly dripping, you can hear the plops of water from deep in the cave and reason there must be much more water further in. On the right, it looks as if the cave is getting shorter, the ceiling steadily comes down and you'll be forced to crawl through. 
+
+    question: Would you like to go left or right?
+
+    options:
+        -
+            target: 5
+            keyphrases:
+            - left
+            - right
+        -
+            target: 6
+            keyphrases:
+                - right
+
+
+#5 left
+
+5: #fix
+    lines:
+        -
+            voice: narrator
+            music: Null #dripping
+            gesture: Null
+            text: You head left, hoping to determine the source of the vibrations, but as you continue down the path, you find yourself less and less able to hear or even feel anything. The volume of the plopping of water continues to increase, completely drowning out your thoughts as you continue into the tunnel. You think of turning around and heading back where you came from because it is getting to be unbearable, but right as you convince yourself to go back it stops . . . You stop, amazed at how suddenly it got silent as you look forwards and get your bearings. Shining your light, you see a small entrance, eager to get away, you head towards it. Once you go through the entrance you step into a magnificent cavern with massive stalactites hanging from the ceiling over a huge pool. The water in it is incredibly still 
+
+    question: would you like to dive into the water or find a way around the pool?
+    
+    options:
+        -
+            target: 7
+            keyphrases:
+                - in
+                - dive
+                - go in
+        -
+            target: 8
+            keyphrases:
+                - go around 
+                - around
+
+
+#6 go right
+
+6: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: crouch
+            Text: You make your way through the right cave, slowly having to duck down further and further. It gets to a point where you are crawling, having to move slowly to avoid any scrapes. Then you feel a rumbling, this one feels more intense than before, leaving everything around you shaking violently. You feel bits of rubble falling on you from the ceiling and realize you have to start moving faster to get out of the situation. You rush forwards, scraping your knee in the process. Despite the pain, you push through until you make it to an opening. Right as you stand back up and turn to look at where you came through the tunnel behind you collapses. You take a second to survey your surroundings and see two possible ways for you to go now that you cannot go back. You see that there is a set of stairs leading up to a source of natural light above you and in front of you, there is an embroidered door. Which way would you like to go?
+
+
+    options:
+        -
+            target: 19
+            keyphrases:
+                - stairs
+                - up
+        - 
+            target: 20
+            keyphrases:
+                - door
+                - forward
+
+
+#7 dive in:
+7: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You dive into the pool swimming deep into the clear water. As you go further you see what has been making the light; it's a massive gem. Under the gem reads a message carved into stone do not steal from royalty. 
+
+    question: Do you take the gem, yes or no?
+
+
+    options:
+        -
+            target: 9
+            keyphrases:
+                - 'yes'
+                - take it
+        - 
+            target: 10
+            keyphrases:
+                - 'no'
+
+
+
+#8 go around
+8: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Circle
+            text: You go around the edge of the pond, carefully avoiding making any contact with the water and you feel the rumbling subside. As you make it to the other end of the room, you enter a door and hear 
+        -   
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Halt!. 
+        -   
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You stop in your place and are confronted by two frog guards. 
+        -   
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Who goes there?
+        -  
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: one asks as they approach. Stunned you are silent, you've never seen anything like it. The two beings approaching you are human-sized frogs standing on their hind legs. They come closer and are similarly stunned. 
+        -   
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: What is that?
+        -  
+            voice: narrator
+            music: Null #Maybe a splash
+            gesture: Null
+            text: you hear one utter. You attempt to retreat just to hear a massive splash behind you. Now you must make a decision, 
+
+
+    question: Do you go towards the guards or back where the splash came from?
+
+
+    options:
+        -
+            target: 11
+            keyphrases:
+                - towards the guards
+                - forwards
+        - 
+            target: 12
+            keyphrases:
+                - back
+                - splash
+
+
+#9 take the gem:
+9: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You reach out towards the gem, and immediately feel the water rumble more intensely and bubbles rise from the depths, surrounding you and pushing you towards the surface. You rise to the surface of the water and swim as fast as you can towards solid footing. Right as you climb back up onto solid ground the pool erupts and drenches you with water. As you clear your eyes you see a massive frog with a tiny crown on its head floating before you. It lets out a colossal 
+        -    
+            voice: evil
+            music: Null
+            gesture: Null
+            text: RIBIT 
+        -    
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: and gazes into your eyes. You are stunned before you can even think the frog booms 
+        -    
+            voice: evil
+            music: Null
+            gesture: Null
+            text: What do you think you are doing? 
+        -   
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: Without giving you time to respond, the frog bellows 
+        -   
+            voice: evil
+            music: Null
+            gesture: Null
+            text: why have intruded into my domain? Do you think you can just come into my kingdom and steal from me? Don't you know I'm the frog king? 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You step back in awe as the frog king approaches you. 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: I am very sorry to do this to you, but you must exit my domain 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: As soon as he has finished speaking, you are lifted by a geyser of water and pushed out of the sewers. 
+
+    question: Maybe I can link to someone?
+
+    options:
+        -
+            target: end
+
+
+#10 do not try to take the gem:
+10: 
+    lines:
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You stare in awe at the gem, it unnaturally radiates light, illuminating the area. Looking around, you can see an odd symbol etched into the stone. It's a square with an inscription 1st piece. You think to yourself how odd that is as you swim back towards the surface. As you climb out of the water, you look back into it, only to see a massive object making its way to the surface behind you. You watch petrified, as it surfaces smoothly, hardly making a ripple in the serene waters. It takes you a second to fully comprehend what has emerged, but you soon realize that it is a massive frog with a tiny crown upon its head. It points to you and says 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: I have not seen a being like you in quite some time, usually we don't happen upon curious individuals. You are, of course, free to roam my city as you please. Just don't make too much trouble for my loyal citizens. 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: He hands you a pin and tells you 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: that should get you past the guards, please enjoy yourself. 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: However, as soon as you leave, the king stops you by asking 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Would you do me a favor? A week ago someone stole a gem from me similar to the one you saw in the pool. Would you be willing to help me find it, maybe you'll have more luck with an outside perspective
+
+    question:  Would you like to help the frog king?
+
+
+    options:
+        -
+            target: 13
+            keyphrases:
+                - 'yes'
+        -
+            target: 14
+            keyphrases:
+                - 'no'
+
+
+
+#11 go towards the guards:
+11: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You decide against going towards the massive splash, instead choosing to try to reason with the guards. Before you can get a word out though, the guards grab you by your arms and bring you back into the room where the splash came from.
+
+    options:
+        -
+            target: 12
+
+
+#12 Go towards the splash
+12: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You are followed into the room by the guards and you see the source of the splash, it is a massive frog with a tiny crown upon its head. The frog turns to you and gives a  
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: ribit 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: followed by a question to the guards 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: who have you brought me? 
+        -        
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Someone who was sneaking out of your quarters sir 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: the guard responds. 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Hmmm, well they didn't touch anything in here 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: the frog king croaks. You notice their attention has briefly shifted away from you,
+
+
+    question: do you run out of the sewers or stay to listen to what the frog king has in store for you?
+
+    options:
+        -
+            target: 15
+            keyphrases:
+                - run
+                - leave
+        -
+            target: 16
+            keyphrases:
+                - stay
+                - listen
+
+
+
+#13 You decide to help the frog king
+13: 
+    lines:
+        -
+            voice: evil
+            music: Null
+            gesture: Null
+            text:  Thank you, I appreciate your help. One final thing, I think you may want to wear this mask so you don't look like such an outsider. Thanks again, please be on your way. 
+        -        
+            voice: narrator
+            music: Null
+            gesture: lookAround
+            text: You head out, stepping through the doors with your mask on  and into the sprawling underground city. The city is absolutely electric, stepping into it is amazing. Hundreds of citizens consisting of rats, frogs, and a few crocodiles are all moving past eachother completely independently in a seemingly chaotic fashion yet everyone gracefully avoids eachother. You are awestruck for a few seconds before finally snapping out of it. You now need to figure out what happened to the king's gem. Surveying the area
+
+    question: you believe that there are two best options 1 Go to the bank and investigate to see if there has been any suspicious deposits 2 Go to the market to get a better grasp on what happens in the city
+
+
+    options:
+        -
+            target: 17
+            keyphrases:
+                - bank
+        -
+            target: 18
+            keyphrases:
+                - market
+
+
+#14 You decide not to help the frog king
+14: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:  You reject the frog king's ask for help and in response the king says 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: I understand. Regardless, I hope you enjoy the town. 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You walk through a door on the other end of the room where there awaits two bewildered frog guards. They look at you, and begin to approach until they see you have a pin from the king. As you leave you hear one say
+        -        
+            voice: adult male
+            music: Null
+            gesture: Null 
+            text: What was that? And how did it get access to the king? 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: However, they do nothing to stop you. You to progress into the city, walking directly into a massive underground kingdom, filled with upright frogs, rats in suits, and even a few crocodiles. Instantly you know that this is where you would like to end your adventure. You step into the city ready to start your new life.
+
+    options:
+        -
+            target: end
+
+
+
+
+#15 - run from the conversation
+15: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:  You take off running, full sprint out the way you came in. After you leave the massive frog questions the guards 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null #shrug
+            text: huh, what do you think they were running from?. 
+
+    # TODO
+    # Transition to another storyline or just have them say no more adventuring today 
+
+    options:
+        -
+            target: end
+ 
+
+
+
+#16 - stay and listen
+16: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You decide to stay for the rest of the conversation with the frog, after all you have not done anything wrong. The frog turns to you and says 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Hello stranger, I am the frog king. I've ruled these parts for quite some time, yet I've only seen a few of your kind. What brings you this way? 
+        -        
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: Stunned by the size of the frog floating before you, you are unable to utter a word. Filling the gap in conversation the king picks up stating 
+        -        
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Whatever brings you here, I am certain we should not be so quick to judge you. After all you haven't done anything wrong. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You start to feel relieved, as he continues 
+        - 
+            voice: evil
+            music: Null
+            gesture: Null
+            text: I do apologize for this inconvenience, you are free to enjoy the sights of my city, I just ask that you do not make too much trouble for my citizens. Please enjoy yourself. Oh and next time, please use the other door. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You are free to go now; however, as soon as go to leave, the king stops you by asking 
+        - 
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Would you be willing to do me a favor? A week ago someone stole a gem from me similar to this one. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: He quickly dives down and produces a massive gem that seems to be emitting light held on a pedestal with a small circle engraving. 
+        - 
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Would you be willing to help me find it? my guards have been searching for quite some time and maybe you'll have more luck with your outside perspective 
+
+
+    question: Would you like to help the frog king?
+
+
+    options:
+        -
+            target: 13
+            keyphrases:
+                - 'yes'
+                - sure
+        - 
+            target: 14
+            keyphrases:
+                - 'no'
+                - nah
+
+
+#17 You go to the bank to start your investigation
+
+17: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Circle
+            text:   You head into the bank and have to wait in line for what feels like an eternity. You finally make it to the front of the line you are met with a teller at the desk who says 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: Hello, how may I help you? 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You ask about any suspicious activities, more specifically if anyone deposited something massive lately or put a ton of money in an account recently. The teller just gives you a bland 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: no 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: and tells you 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: look, I can't tell you anything about our clients if you want any information about stuff like that you'll have to move elsewhere. 
+
+    question: Now that you've ran into that dead end, would you like to continue your search at the market or return to the king to ask for help?
+
+
+    options:
+        -
+            target: 23
+      
+
+
+
+#18 You go to the market to begin your investigation
+18: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Circle
+            text:   You head into the massive market, and it seems everything is for sale. Walking from stall to stall you even witness a man sell his entire stall, including the stall that housed the stuff. The buyer then just hops behind the stall and begins to sell his newly acquired stock. You walk up to the man and inquire about any gems being sold. He says 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Yeah, of course I know all about gems, see! Look at my selection. I have anything you could possibly want, for a price of course. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You realize that you are not going to get anywhere asking for free information here, everything has a price. Because you do not have any money to spend here, you feel like this is just going to be a dead end. 
+
+
+    question: To continue your search would you like to continue your search at the bank or just return to the king to ask for help?
+
+
+    options:
+        -
+            target: 23
+
+
+
+#19 You go up the stairs
+19: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Circle
+            text:   You head up the stairs into the natural light shining down on you. With each step, the path gets even brighter until you reach the top where you must lift a grate. Upon doing so you are temporarily blinded by the light until you recognize your surroundings. You have managed to take a very roundabout way into the town.
+
+
+    options:
+        -
+            target: TBD
+
+
+
+#20 You go up to the door
+20: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: knocking
+            text:   You walk to the door on the other end of the hallway and decide to knock (knock knock). Then you are asked for the passcode; thinking quickly you utter the only phrase that comes to your mind Purple giraffe lizard! After confidently stating those words, the person behind the door just says 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Uh, no it's a knock. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: Disappointed, you turn around just to be immediately confronted by a massive rat standing on its hind legs. It pays no mind to your surprise and asks 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: Hey, how do you feel about doing a job? 
+
+
+    question: Would you like to accept the job?
+
+
+    options:
+        -
+            target: 21
+            keyphrases:
+                - 'yes'
+                - take it
+        -
+            target: 22
+            keyphrases:
+                - 'no'
+                - don't
+
+
+#21 You accept his proposal
+21: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: beaconing
+            text:   You nod to the rat, showing you want the job. He says 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: follow me 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: he leads you to a seemingly solid wall where he pulls back a curtain and reveals an entrance. Following him in, he begins to explain the job 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: the job is simple, all you have to do is help us by holding a door open, simple job right? Anyways, the pay is good and it shouldn't take long. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You follow behind him until you approach the door with a different rat holding it open. 
+        - 
+            voice: boy child
+            music: Null
+            gesture: Null
+            text: Okay, here it is, we only need it open for a minute. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You step in and hold the door for the rat and they hurry off. A few minutes pass and you begin to feel as if you have been tricked, maybe they were just seeing how long you would stand there. Just as you are thinking of leaving, the two rats sprint through the door holding a massive gem. Before you have time to process you are grabbed by guards. They are frog-men that say 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Hey, why are you stealing from the king? 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: Before you can fully understand what just happened they've put you into a jail cell. After a few minutes a frog walks in and sits in front of your cell 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: So, I hear that you have been involved in quite the heist. Odd that you would be an outsider partaking in such an event so I would like to hear your side. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: You proceed to tell him you have no idea what just happened and that you were looped into the entire mess. After hearing your side of the story, the frog decides to let you go stating 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: I believe you; however, you cannot come back to our city until we get this under control. Sorry, but you must leave. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: He has you leave the cell and you progress back to the outside world and think that you probably shouldn't get involved with anything else today.
+
+    options:
+        -
+            target: end
+
+
+
+
+#22 You do not accept
+22: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:   You reject his proposal with a nod and then head up the stairs up into the natural light shining down on you. With each step, the path gets even brighter until you reach the top where you must lift a grate. Upon doing so you are temporarily blinded by the light until you recognize your surroundings. You have managed to take a very roundabout way into the town.
+    options:
+        -
+            target: 51
+    
+
+    
+#23 Continue the search
+23: 
+    lines:
+        -
+            voice: narrator
+            music: Null #knocking
+            gesture: knocking
+            text:   As you leave, you notice a suspicious looking citizen creeping into an alleyway, curious, you follow him. You make your way through the maze of a city, following the figure through twisting and turning alleyways as you wonder to yourself about who could have possibly designed the city as nothing appears to be linear. Finally, you arrive at a carved wooden door where the suspect knocks 5 times and the door swings open. The suspect quickly rushes in and the door slams behind him. After a few minutes pass you go to the door and repeat the same action, knocking 5 times and are rushed into the room. It's incredibly dark in the room and you can just see the outlines of individuals surrounding a source of light. Sticking to the edges of the room, you begin making your way to a better viewpoint when you see it. The light is coming from the stolen gem, what luck! You think to yourself, but how are you going to get it out? 
+
+    question: Would you like to just walk up and take it? Or would you like to wait for a while?
+
+
+    options:
+        -
+            target: 24
+            keyphrases:
+                - 'yes'
+                - grab
+                - take it
+        -
+            target: 25
+            keyphrases:
+                - 'no'
+                - wait
+                - don't
+
+#24 Just take it
+24: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:  You simply walk up to the massive gem and grab it. Your confidence in grabbing the gem puts you above suspicion and you walk out of the room. 
+
+
+    options:
+        -
+            target: 29
+
+
+
+#25 Wait
+25: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:   You decide to wait for a while and see if any opportunities present themselves. After a few minutes the small croud gathered around the gem begins to disperse, a few of them go deeper into the building while some leave entirely, now there are less individuals around the gem, making a potentially better time to strike. 
+
+
+
+
+    question: Would you like to take the gem, or continue to wait?
+
+
+    options:
+        -
+            target: 24
+            keyphrases:
+                - 'yes'
+                - grab
+                - take it
+        -
+            target: 26
+            keyphrases:
+                - 'no'
+                - wait
+                - don't
+
+
+#26 Wait
+26: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:   You decide to wait for a while longer and see if any new opportunities present themselves. Almost everyone has left the gem, there are maybe 1 or 2 stragglers still hanging around, giving you the best time to strike. 
+
+    question: Would you like to take the gem, or create a distraction?
+
+    options:
+        -
+            target: 24
+            keyphrases:
+                - 'yes'
+                - grab
+                - take it
+        -
+            target: 26
+            keyphrases:
+            - no
+            - wait
+            - don't
+
+
+#27 Make a distraction
+27: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:   You decide to create a distraction and draw the remaining people away from the gem. To do so, you grab a small stone off the ground and throw it into the opposite corner of the room. Crash, it sounds as if you've managed to hit some sort of glass. 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: Oh, no! 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: one of the stragglers exclaims, 
+        - 
+            voice: adult male
+            music: Null
+            gesture: Null
+            text: something has shattered my favorite vase. Come help me clean it up 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: he continues and the gem is completely unguarded. While everyone is distracted you walk up and take the gem
+
+    options:
+        -
+            target: 29
+
+
+
+#29 You successfully retrieved the gem
+29: 
+    lines:
+        -
+            voice: narrator
+            music: Null
+            gesture: Null
+            text:   You have successfully retrieved the gem for the king. You rush out of the door and back into the maze of alleyways, after about an hour of being hopelessly lost, you emerge back into a familiar area and head towards the frog king's home. Once you arrive you walk triumphantly past the guards, holding the gem in front of you to let them know you should be there. Once you arrive in the frog king's room you present it to him and he lets out a booming 
+        - 
+            voice: evil
+            music: Null
+            gesture: Null
+            text: Ribbit, thank you outsider. I knew I could count on you to aid this kingdom. As a token of my appreciation we will hold a feast and I will award you with a home within my magnificent kingdom. 
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: After the feast and party, you are shown to your new home where you hope to have more adventures; however, your story for today is at an end.
+
+    options:
+        -
+            target: end
+
+51:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: When you go into the town, you see that it is full of life. It looks like there's a festival going on. You see that there's children playing hide and seek to your right, and a food stand to your left.
+           
+    question: would you like to go right to the children or left to the food stand?
+    options:
+        - 
+            target: 52 
+            keyphrases: 
+                - right 
+                - children
+            clarification: go right towards the children?
+
+        - 
+            target: 53 
+            keyphrases: 
+                - left
+                - food stand
+            clarification: go left towards the food stand?
+
+
+52:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: You walk up to the children playing hide and seek. There's 5 of them, and they look like they're having a lot of fun!
+           
+    question: would you like to play with the other children?
+    options:
+        - 
+            target: 54 
+            keyphrases: 
+                - 'yes' 
+            clarification: play games with the other children?
+
+        - 
+            target: 55 
+            keyphrases: 
+                - 'no'
+            clarification: don't play with the others?
+
+54:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Let's play a game together! Do you want to play hide and seek or rock paper scissors?
+           
+    question: would you like to play hide and seek or rock paper scissors?
+    options:
+        - 
+            target: 56 
+            keyphrases: 
+                - hide and seek 
+                - hide
+                - seek
+            clarification: play hide and seek?
+
+        - 
+            target: 57 
+            keyphrases: 
+                - rock paper scissors
+                - rock
+                - paper
+                - scissors
+            clarification: play rock paper scissors? 
+
+
+56:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Okay! I'm going to be the seeker, I'm going to count down from ten. Are you ready? Ten! Nine!
+           
+    question: would you like to hide in an empty box or find a different hiding spot?
+    options:
+        - 
+            target: 58 
+            keyphrases: 
+                - different 
+                - hiding
+                - spot
+            clarification: find a different hiding spot?
+
+        - 
+            target: 59 
+            keyphrases: 
+                - box
+                - hide in
+                - empty box
+            clarification: hide in the box?
+
+58:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Eight! Seven! Six! Five!
+           
+    question: would you like to hide under a food stand or keep looking for another spot?
+    options:
+        - 
+            target: 60 
+            keyphrases: 
+                - Different 
+                - Hiding
+                - Spot
+            clarification: find a different hiding spot?
+
+        - 
+            target: 61 
+            keyphrases: 
+                - Under
+                - Food Stand
+            clarification: hide under the food stand?
+
+
+60:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Four! Three! Two! One!
+           
+    question: Would you like to hide behind a tree?
+    options:
+        - 
+            target: 62 
+            keyphrases: 
+                - 'yes'
+            clarification: hide behind a tree?
+
+        - 
+            target: 63 
+            keyphrases: 
+                - 'no'
+            clarification: don't hide behind the tree?
+
+62:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Ready or not, here I come! 
+
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: They look inside a box, under the food stand, and they just can't find you. They end up finding everyone else besides you, and everyone else is trying to find you as well. 
+
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: We give up! Come out, you win!
+
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: You win the game of hide and seek. The other children give you a trophy that says champion of hide and seek! Congratulations, you did it!
+           
+
+63:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Ready or not, here I come! 
+
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: They look around and see that you still haven't found a hiding spot. 
+
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Hey silly, you forgot to hide! Maybe next time we can play hide and seek again.
+
+61:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Ready or not, here I come! 
+
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: They look inside a box, good thing you didn't hide there! But oh no, they're walking right towards you! 
+
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: I found you! I win again! let's play again another time. I'll see you later.
+
+59:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Ready or not, here I come! 
+
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: You hear footsteps walking towards the box you're hiding in. You hold your breath hoping they will walk away and don't look inside the box. 
+
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: I found you! That's a good hiding spot. But I win again! Let's play again another time, I'll see you again another time.
+
+
+57:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Okay! Let's play rock paper scissors! Ready? Rock. Paper. Scissors. Shoot!
+           
+    question: would you like to play rock paper or scissors?
+    options:
+        - 
+            target: 70 
+            keyphrases: 
+                - Rock 
+            clarification: Play rock?
+
+        - 
+            target: 70 
+            keyphrases: 
+                - Paper 
+            clarification: Play Paper?
+        - 
+            target: 71 
+            keyphrases: 
+                - Scissors  
+            clarification: Play scissors?
+
+
+70:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Oh no, I lost! You're really good at this game.
+
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: You win the game of hide and seek. The other children give you a trophy that says champion of rock paper scissors! Congratulations, you did it!
+
+71:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Yay, I win! We should play a game another time. I'll see you later!
+
+53:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: When you walk up to the food stand, you see that there's blue and red candy.
+           
+    question: would you like to try the red candy or the blue candy?
+    options:
+        - 
+            target: 80 
+            keyphrases: 
+                - red
+            clarification: eat the red candy?
+
+        - 
+            target: 80 
+            keyphrases: 
+                - blue
+            clarification: eat the blue candy?
+
+80:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: You try the candy, and it tastes amazing! It's the perfect sweetness and it brings you joy. That's when you feel someone tapping on your shoulder.
+
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: Hey! Do you want to join us? We're playing games.
+           
+    question: would you like to join the other children?
+    options:
+        - 
+            target: 54 
+            keyphrases: 
+                - 'yes' 
+                - join
+            clarification: join the children?
+
+        - 
+            target: 81 
+            keyphrases: 
+                - 'no'
+                - don't join
+            Clarification: don't join the other children?
+
+81:
+    lines:            
+        - 
+            voice: boy child
+            music: Null 
+            gesture: Null
+            text: That's okay! It's getting a little late anyway. We should all go back and sleep for tonight anyway. Maybe we can play some other time. I'll see you later!
+           
+
+55:
+    lines:            
+        - 
+            voice: narrator
+            music: Null 
+            gesture: Null
+            text: That's okay! It's getting a little late anyway. Maybe we should sleep for the night so we are ready for tomorrow! Sleeping a full night's sleep is really important. Maybe we can go on an adventure another time! I'll see you again.
+   
+end:
+    lines:
+        - 
+            voice: narrator
+            music: Null
+            gesture: Null
+            text: Thank you for listening
+    question: Would you like to hear another story
+    options:
+        - 
+            target: intro
+            keyphrases:
+                - 'yes'
+
+        - 
+            target: 55
+            keyphrases:
+                - 'no'
+        
+
+       
