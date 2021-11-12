@@ -187,5 +187,5 @@ def create_story(file_to_load = None):
 
     write_story_to_yaml("full_story_test")
 
-create_story("stories/fuller_story.yaml")
+create_story("full_story_test.yaml")
 
