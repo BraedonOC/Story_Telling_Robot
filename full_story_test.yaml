@@ -48,11 +48,13 @@ lake:
   options:
   - clarification: look investigate the tree gems?
     keyphrases:
+    - 'yes'
     - gems
     - investigate
     target: tree_gems
   - clarification: you want to cross the bridge?
     keyphrases:
+    - 'no'
     - bridge
     - cross
     target: bridge_2
@@ -118,7 +120,7 @@ pay_bridge_1:
     - brave the bridge
     - I want to brave the bridge
     - I'll try the bridge
-    target: 1
+    target: 2
   - clarification: you want to go into the sewers?
     keyphrases:
     - go in the sewers
@@ -178,7 +180,6 @@ pay_bridge_1:
   options:
   - keyphrases:
     - left
-    - right
     target: 5
   - keyphrases:
     - right
@@ -226,7 +227,7 @@ pay_bridge_1:
       behind you collapses. You take a second to survey your surroundings and see
       two possible ways for you to go now that you cannot go back. You see that there
       is a set of stairs leading up to a source of natural light above you and in
-      front of you, there is an embroidered door. Which way would you like to go?
+      front of you, there is an embroidered door.
     voice: narrator
   options:
   - keyphrases:
@@ -237,6 +238,7 @@ pay_bridge_1:
     - door
     - forward
     target: 20
+  question: Which way would you like to go?
 7:
   lines:
   - gesture: null
@@ -348,7 +350,6 @@ pay_bridge_1:
     voice: narrator
   options:
   - target: end
-  question: Maybe I can link to someone?
 10:
   lines:
   - gesture: null
@@ -607,7 +608,7 @@ pay_bridge_1:
     voice: narrator
   - gesture: null
     music: null
-    text: false
+    text: No
     voice: boy child
   - gesture: null
     music: null
@@ -619,7 +620,14 @@ pay_bridge_1:
       about stuff like that you'll have to move elsewhere.
     voice: boy child
   options:
-  - target: 23
+  - keyphrases:
+    - market
+    - continue
+    target: 23
+  - keyphrases:
+    - king
+    - 'return'
+    target: 23
   question: Now that you've ran into that dead end, would you like to continue your
     search at the market or return to the king to ask for help?
 18:
@@ -644,9 +652,16 @@ pay_bridge_1:
       you feel like this is just going to be a dead end.
     voice: narrator
   options:
-  - target: 23
-  question: To continue your search would you like to continue your search at the
-    bank or just return to the king to ask for help?
+  - keyphrases:
+    - bank
+    - continue
+    target: 23
+  - keyphrases:
+    - king
+    - 'return'
+    target: 23
+  question: Now that you've ran into that dead end, would you like to continue your
+    search at the bank or return to the king to ask for help?
 19:
   lines:
   - gesture: Circle
@@ -658,7 +673,7 @@ pay_bridge_1:
       into the town.
     voice: narrator
   options:
-  - target: TBD
+  - target: 51
 20:
   lines:
   - gesture: knocking
@@ -1172,8 +1187,8 @@ end:
 tree_gems:
   lines:
   - gesture: idle
-    text: 'The gems look like they''ve been embedded into the tree and as you look
-      closer words seem to appear under their surface '
+    text: The gems look like they've been embedded into the tree and as you look
+      closer words seem to appear under their surface
     voice: narrator
   - gesture: idle
     text: This way to felmont bridge
@@ -1188,6 +1203,8 @@ tree_gems:
     - bridge
     target: bridge
   - keyphrases:
+    - keep going
+    - continue
     - new bridge
     - lake
     - forward
@@ -1230,4 +1247,9 @@ cross:
     - go into sewers
     - in
     target: 2
+  - keyphrases:
+    - keep
+    - going
+    - keep going
+    target: lake
   question: Do you want to keep walking or go into the sewers?

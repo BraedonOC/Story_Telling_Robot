@@ -15,23 +15,26 @@ from utils import *
 
 
 NAO_MODE = True
-FAST_MODE = True
+FAST_MODE = False
+start_node = intro 
 
 interesting_voices = {'narrator' : 1,
           'adult male' : 0.9,
           'mysterious' : 0.88,
           'boy child' : 1.2,
-          'evil' : 0.5 
+          'evil' : 0.6, 
+          'woman' : 1.2
       }
 
 bland = {'narrator' : 1,
           'mysterious' : 1,
           'adult male' : 1,
           'boy child' : 1,
-          'evil' : 1 
+          'evil' : 1 ,
+          'woman' : 1
       }
 
-voices = bland
+voices = interesting_voices
 
 class RobotBrain:
     def __init__(self):
@@ -45,7 +48,7 @@ class RobotBrain:
        # self.audio.setVolume(0.1)
             
         parser = argparse.ArgumentParser()
-        parser.add_argument("--ip", type=str, default="138.67.235.74",
+        parser.add_argument("--ip", type=str, default="138.67.231.171",
                             help="Robot's IP address. If on a robot or a local Naoqi - use '169.254.74.67' (this is the default value).")
         parser.add_argument("--port", type=int, default=9559,
                             help="port number, the default value is OK in most cases")
@@ -103,6 +106,7 @@ class RobotBrain:
 
             #This creates a vocabulary for the speech recognition to look through
             self.listener.pause(True)
+            time.sleep(0.1)
             self.listener.removeAllContext()
             print('vocab: {}'.format(vocab))
             self.listener.setVocabulary(vocab, True)
@@ -172,7 +176,8 @@ class RobotBrain:
         return keyphrase_sets
 
     def tell_story(self):
-        current_id = 'intro'
+    #    current_id = 'intro'
+        current_id = start_node
 
         while True:
             if current_id == "exit":
@@ -205,15 +210,15 @@ class RobotBrain:
 
                 self.say('THAT\'S NOT AN OPTION... please try again', 'evil')
             # the target of the option stores the node that we go to if the user chooses this option 
-            print("current id: {}".format(current_id))
-            print("user choice : {}".format(user_choice))
-            print("target value: {}".format(self.story[current_id]['options'][user_choice]['target']))
+            #print("current id: {}".format(current_id))
+            #print("user choice : {}".format(user_choice))
+            #print("target value: {}".format(self.story[current_id]['options'][user_choice]['target']))
             if ble:
                 current_id = self.story[current_id]['options'][user_choice]['target']
 
 
 if __name__ == "__main__":
     test_brain = RobotBrain() 
-    test_brain.read_story_yaml('stories/fuller_story.yaml')
+    test_brain.read_story_yaml('full_story_test.yaml')
     test_brain.tell_story()
 
