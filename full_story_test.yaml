@@ -3,14 +3,10 @@ intro:
   - gesture: null
     music: null
     text: You have been walking for days on your way to Bleblob, the largest town
-      in the region.  At long last you can see the tall walls of Bleblob towering
-      over the hills in the distance. The path stretches out in front of you as you
-      prepare for this day's journey. After several hours of walking you come to one
-      of the large rivers that surround Bleblob.  Where you stand the trail slipts
+      in the region. Where you currently stand the trail slipts
       into two paths, one going to your right towards what appears to be a lake, and
-      one going to your left towards a bridge.  The bridge looks relatively sturdy
-      and well kept.  The logs it's made out of appear polished and they sparkle as
-      you tilt your head to look at them. The lake to your right looks less inviting,
+      one going to your left towards a bridge.  The logs it's made out of look weathered 
+      but sturdy. The lake to your right looks less inviting,
       but the path towards it is well troden and confident.  From what you can see
       of the lake it doesn't look particularly large, and might provide an alternative
       path accross the river.
@@ -1214,27 +1210,27 @@ tree_gems:
 bridge_2:
   lines:
   - gesture: idle
-    text: You keep walking and see a beautiful bridge.  You can see a group of people
-      laying under the bridge relaxing and one of them comes up to you
+    text: You keep walking and see a beautiful bridge. As you approach you hear delicate flute music and notice
+      people launging under the bridge in hammocks.  Once the notice you one swings out of their hammock revealing 
+      that the bottom half of their body is that of a beaver.  The half human, half beaver waves at you and walks over to 
+      you. 
     voice: narrator
+
   - gesture: idle
     text: hello traveler, you have made the right choice of bridges, feel free to
-      cross without payment
+      cross without payment or stay and watch the river for a while with us.
     voice: woman
-  - gesture: idle
-    text: one of them says looking over at you.  As you approach you notice that the
-      bottom half of these people is that of beavers
-    voice: narrator
+
   options:
   - keyphrases:
     - other one
     - go back
     target: bridge
   - keyphrases:
-    - 'cross '
+    - 'cross'
     - cross this bridge
     target: cross
-  question: would you like to cross this bridge or go back to the other one?
+  question: would you like to cross the bridge or stay with the half beaver people under the bridge?
 cross:
   lines:
   - gesture: idle
