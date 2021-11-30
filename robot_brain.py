@@ -16,7 +16,7 @@ from utils import *
 
 NAO_MODE = True
 FAST_MODE = False
-start_node = intro 
+start_node = "intro" 
 
 interesting_voices = {'narrator' : 1,
           'adult male' : 0.9,
@@ -75,6 +75,7 @@ class RobotBrain:
         self.listener.subscribe("Story_Robot")
         self.listener.unsubscribe('Story_Robot')
         self.talker = self.session.service('ALTextToSpeech')
+        self.talker.setParameter("defaultVoiceSpeed", 90)
 
     def say(self, text_to_say, voice='narrator', question=False):
         if voice == None:
