@@ -4,7 +4,6 @@ import argparse
 import sys
 import time
 from naoqi import ALProxy
-from utils import *
 
 #class Node:
 #    def __init__(self, story, question, branch_list, params):
