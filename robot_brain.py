@@ -220,6 +220,6 @@ class RobotBrain:
 
 if __name__ == "__main__":
     test_brain = RobotBrain() 
-    test_brain.read_story_yaml('full_story_test.yaml')
+    test_brain.read_story_yaml('full_story.yaml')
     test_brain.tell_story()
 
