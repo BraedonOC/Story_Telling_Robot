@@ -124,6 +124,7 @@ def find_empty_references():
 
 def create_story_node(): 
     global new_node_id
+    global next_node_number
     while True:
         empty_references = find_empty_references()
         print("Would you like to create a new node or fill in an option? y/n ")
@@ -155,6 +156,7 @@ def create_story_node():
 
 def create_story(file_to_load = None):
     global story
+    global next_node_number
     print("\n\n")
     print(" ________  _________  ________  ________      ___    ___       ___    ___ ________  _____ ______   ___       ___  ________  _______   ________     ")
     print("|\   ____\|\___   ___\\   __  \|\   __  \    |\  \  /  /|     |\  \  /  /|\   __  \|\   _ \  _   \|\  \     |\  \|\_____  \|\  ___ \ |\   __  \    ")
