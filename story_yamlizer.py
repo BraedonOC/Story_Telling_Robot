@@ -1,4 +1,5 @@
 import yaml
+from sys import argv
 
 
 story = {}
@@ -6,7 +7,7 @@ node_name_map = {}
 next_node_number = 1
 
 def write_story_to_yaml(story_name):
-    with open(f"{story_name}.yaml", "w") as f:
+    with open(story_name, "w") as f:
         yaml.dump(story, f)
 
 def print_node_names(node_id_list):
@@ -187,7 +188,7 @@ def create_story(file_to_load = None):
             continue
         break
 
-    write_story_to_yaml("full_story_test")
+    write_story_to_yaml(argv[1])
 
-create_story("full_story_test.yaml")
+create_story(argv[1])
 
