@@ -1,7 +1,7 @@
 import yaml 
 import qi
 import argparse 
-import sys
+from sys import argv
 import time
 from naoqi import ALProxy
 
@@ -51,8 +51,11 @@ class RobotBrain:
                             help="Robot's IP address. If on a robot or a local Naoqi - use '169.254.74.67' (this is the default value).")
         parser.add_argument("--port", type=int, default=9559,
                             help="port number, the default value is OK in most cases")
+        parser.add_argument("--story", type=str, default="full_story.yaml",
+                            help="the path to the yaml file containing a story for the robot to tell")
 
         args = parser.parse_args()
+        self.read_story_yaml(args.story)
         self.ip = args.ip
         self.port = args.port
         self.session = qi.Session()
@@ -219,6 +222,7 @@ class RobotBrain:
 
 if __name__ == "__main__":
     test_brain = RobotBrain() 
-    test_brain.read_story_yaml('full_story.yaml')
+    #test_brain.read_story_yaml('full_story.yaml')
+#    test_brain.read_story_yaml(argv[1])
     test_brain.tell_story()
 
